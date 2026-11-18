@@ -13,7 +13,10 @@
   a { text-decoration: none; color: inherit; }
   .pvbar { position: fixed; top: 0; left: 0; right: 0; z-index: 60;
            background: #f5b942; color: #14171c; font-size: 12px; font-weight: 600;
-           text-align: center; padding: 7px 12px; }
+           text-align: center; padding: 7px 12px; line-height: 1.35; }
+  @media (max-width: 480px) {
+    .pvbar { font-size: 10.5px; padding: 6px 8px; letter-spacing: -0.1px; }
+  }
 
   nav { position: sticky; top: 31px; z-index: 50; display: flex; align-items: center;
         gap: 22px; padding: 14px 24px; background: rgba(13,16,20,.92);
@@ -225,7 +228,7 @@ Price:    &#8377;95/month
 Access:   Full root
 Panel:    Pterodactyl supported
 Address:  servername.xgencloud.bond
-Status:   <span class="p">online</span>
+Status:   <span class="p">illustrative sample</span>
 <span class="p">$</span> <span class="cursor"></span></pre>
     </div>
   </section>
@@ -265,7 +268,7 @@ Status:   <span class="p">online</span>
       <div class="step">
         <div class="stepnum">03</div>
         <h3>Start building</h3>
-        <p>Minecraft server? You get your own servername.xgencloud.bond address. Bot? We keep it online for you.</p>
+        <p>Minecraft server? You get your own servername.xgencloud.bond address. Bot? We host it for you.</p>
       </div>
     </div>
   </section>
@@ -408,4 +411,4 @@ Status:   <span class="p">online</span>
 })();
 </script>
 </body>
-</html>
+  </html>
