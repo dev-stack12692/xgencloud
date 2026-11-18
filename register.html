@@ -26,6 +26,8 @@
   .note { color: #9aa0a6; font-size: 13px; min-height: 16px; margin-top: 10px; }
   .alt { margin-top: 14px; font-size: 13px; color: #9aa0a6; text-align: center; }
   .alt a { color: #f5b942; text-decoration: none; }
+  .pvnote { background: #0d1014; border: 1px solid #2a3038; border-radius: 8px;
+            padding: 13px 15px; font-size: 13px; color: #c8ccd0; line-height: 1.55; }
   .pvbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50;
            background: #f5b942; color: #14171c; font-size: 12px; font-weight: 600;
            text-align: center; padding: 7px 12px; }
@@ -37,24 +39,6 @@
 <div class="card">
   <h1><span class="x">Xgen</span>Cloud</h1>
   <p class="sub">Create your account</p>
-  <form id="f" method="post">
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" autocomplete="email" required>
-    <label for="pw">Password</label>
-    <input id="pw" name="password" type="password" autocomplete="new-password" required>
-    <button id="go" type="submit">Create account</button>
-  </form>
-  <div class="err" id="err"></div>
-  <div class="note" id="note"></div>
-  <div class="alt">Already have an account? <a href="login.html">Sign in</a></div>
-  <div class="alt"><a href="index.html">Back to home</a></div>
-</div>
-<script>
-var f = document.getElementById('f');
-f.addEventListener('submit', function (ev) {
-  ev.preventDefault();
-  document.getElementById('err').textContent = 'Preview only - the backend is not live yet.';
-});
-</script>
+  <div class="pvnote">Account creation is not available yet. This is a static preview - accounts open when the service launches. Until then, reach us on Discord.</div>
 </body>
 </html>
