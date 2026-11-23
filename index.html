@@ -168,7 +168,7 @@
   .planbanner .pb .from { font-size: 13px; font-weight: 700; color: #4f8cff;
                 background: rgba(11,14,19,.75); border: 1px solid #4f8cff;
                 border-radius: 6px; padding: 3px 10px; }
-  .addon { color: #9aa0a6; font-size: 13px; margin: -28px 0 40px; }
+  .addon { color: #9aa0a6; font-size: 13px; margin: 6px 22px 20px; }
   .addon b { color: #e8eaed; }
   .policy { color: #9aa0a6; font-size: 12px; margin: 0 0 8px; }
 
@@ -235,6 +235,7 @@
   /* individual plan tier cards */
   .tiergrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
               gap: 14px; padding: 16px 22px 22px; }
+  .tiergrid:not(.showall) { grid-template-columns: repeat(3, 1fr); }
   .tier { background: #0d1017; border: 1px solid #232830; border-radius: 12px;
           padding: 16px; display: flex; flex-direction: column;
           transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
@@ -265,7 +266,11 @@
   .showall:hover { border-color: #4f8cff; background: rgba(79,140,255,.08); }
 
   @media (max-width: 640px) {
-    .tiergrid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 10px; }
+    .tiergrid, .tiergrid:not(.showall) { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+    .tier { padding: 12px; }
+    .torder { font-size: 11px; }
+    .dfab { width: 46px; height: 46px; right: 14px; bottom: 14px; }
+    .dfab svg { width: 22px; height: 22px; }
     .planbanner { height: 190px; }
     .planbanner .pb { flex-direction: column; align-items: flex-start; gap: 6px; }
     .planbanner .pstart { text-align: left; }
