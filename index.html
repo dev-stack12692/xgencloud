@@ -233,8 +233,8 @@
                  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
   /* individual plan tier cards */
-  .tiergrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
-              gap: 12px; padding: 16px 22px 22px; }
+  .tiergrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+              gap: 14px; padding: 16px 22px 22px; }
   .tier { background: #0d1017; border: 1px solid #232830; border-radius: 12px;
           padding: 16px; display: flex; flex-direction: column;
           transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
@@ -250,11 +250,19 @@
   .tspecs li { display: flex; align-items: center; gap: 7px; }
   .tspecs li::before { content: ""; width: 5px; height: 5px; border-radius: 1px;
             background: #4f8cff; flex-shrink: 0; }
-  .torder { margin-top: auto; display: block; text-align: center;
+  .torder { margin-top: auto; display: block; text-align: center; white-space: nowrap;
             font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
             font-size: 11.5px; color: #4f8cff; border: 1px solid #2a3038;
             border-radius: 6px; padding: 7px 0; transition: border-color .15s ease, background .15s ease; }
   .torder:hover { border-color: #4f8cff; background: rgba(79,140,255,.08); }
+
+  .tier.xtra { display: none; }
+  .tiergrid.showall .tier.xtra { display: flex; }
+  .showall { display: block; width: calc(100% - 44px); margin: 0 22px 20px; padding: 10px 0;
+             font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 12px;
+             color: #4f8cff; background: none; border: 1px solid #2a3038; border-radius: 8px;
+             cursor: pointer; transition: border-color .15s ease, background .15s ease; }
+  .showall:hover { border-color: #4f8cff; background: rgba(79,140,255,.08); }
 
   @media (max-width: 640px) {
     .tiergrid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 10px; }
@@ -450,7 +458,7 @@ Status:   <span class="p">illustrative sample</span>
     <ul class="pchecks">
       <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Full root access</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Linux included</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Docker + Pterodactyl</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Minecraft friendly</li>
     </ul>
-    <div class="tiergrid">
+    <div class="tiergrid" id="vpsgrid">
     <div class="tier">
       <div class="tram">1<span>GB RAM</span></div>
       <div class="tprice">&#8377;25<span>/mo</span></div>
@@ -469,49 +477,50 @@ Status:   <span class="p">illustrative sample</span>
       <ul class="tspecs"><li>20 GB disk</li><li>1 vCore</li><li>Full root</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">6<span>GB RAM</span></div>
       <div class="tprice">&#8377;75<span>/mo</span></div>
       <ul class="tspecs"><li>30 GB disk</li><li>1 vCore</li><li>Full root</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">8<span>GB RAM</span></div>
       <div class="tprice">&#8377;95<span>/mo</span></div>
       <ul class="tspecs"><li>40 GB disk</li><li>2 vCore</li><li>Full root</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">12<span>GB RAM</span></div>
       <div class="tprice">&#8377;135<span>/mo</span></div>
       <ul class="tspecs"><li>50 GB disk</li><li>3 vCore</li><li>Full root</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">16<span>GB RAM</span></div>
       <div class="tprice">&#8377;175<span>/mo</span></div>
       <ul class="tspecs"><li>75 GB disk</li><li>4 vCore</li><li>Full root</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">24<span>GB RAM</span></div>
       <div class="tprice">&#8377;255<span>/mo</span></div>
       <ul class="tspecs"><li>90 GB disk</li><li>4 vCore</li><li>Full root</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">32<span>GB RAM</span></div>
       <div class="tprice">&#8377;335<span>/mo</span></div>
       <ul class="tspecs"><li>150 GB disk</li><li>6 vCore</li><li>Full root</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">40<span>GB RAM</span></div>
       <div class="tprice">&#8377;415<span>/mo</span></div>
       <ul class="tspecs"><li>200 GB disk</li><li>8 vCore</li><li>Full root</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
     </div>
+    <button class="showall" data-grid="vpsgrid" aria-expanded="false" aria-controls="vpsgrid" data-more="Show all 10 plans &darr;" data-less="Show less &uarr;">Show all 10 plans &darr;</button>
     <p class="addon">IPv4 add-ons: <b>Shared IPv4 &#8377;65/mo</b> (port forwarding, IP + port access, Minecraft compatible) &middot; <b>Dedicated public IPv4 &#8377;265/mo</b>.</p>
     </div>
 
@@ -522,7 +531,7 @@ Status:   <span class="p">illustrative sample</span>
     <ul class="pchecks">
       <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>We host your bot</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Shared-RAM plans</li><li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Help on Discord</li>
     </ul>
-    <div class="tiergrid">
+    <div class="tiergrid" id="botgrid">
     <div class="tier">
       <div class="tram">360<span>MB RAM</span></div>
       <div class="tprice">&#8377;30<span>/mo</span></div>
@@ -541,25 +550,26 @@ Status:   <span class="p">illustrative sample</span>
       <ul class="tspecs"><li>2 GB disk</li><li>75% shared CPU</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">1<span>GB RAM</span></div>
       <div class="tprice">&#8377;120<span>/mo</span></div>
       <ul class="tspecs"><li>2.5 GB disk</li><li>100% shared CPU</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">1.5<span>GB RAM</span></div>
       <div class="tprice">&#8377;160<span>/mo</span></div>
       <ul class="tspecs"><li>3 GB disk</li><li>150% shared CPU</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
-    <div class="tier">
+    <div class="tier xtra">
       <div class="tram">2<span>GB RAM</span></div>
       <div class="tprice">&#8377;199<span>/mo</span></div>
       <ul class="tspecs"><li>3 GB disk</li><li>200% shared CPU</li></ul>
       <a class="torder" href="https://discord.gg/8q2Uc7JR97" rel="noopener">order on discord &rarr;</a>
     </div>
     </div>
+    <button class="showall" data-grid="botgrid" aria-expanded="false" aria-controls="botgrid" data-more="Show all 6 plans &darr;" data-less="Show less &uarr;">Show all 6 plans &darr;</button>
     </div>
 
     <p class="policy">Free plans are also available through Discord invites and server boosts - details on our Discord.</p>
@@ -618,6 +628,18 @@ Status:   <span class="p">illustrative sample</span>
     });
   }, { threshold: 0.12 });
   els.forEach(function (el) { io.observe(el); });
+})();
+
+(function () {
+  document.querySelectorAll('.showall').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var grid = document.getElementById(btn.getAttribute('data-grid'));
+      if (!grid) return;
+      var open = grid.classList.toggle('showall');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? btn.getAttribute('data-less') : btn.getAttribute('data-more');
+    });
+  });
 })();
 </script>
 </body>
